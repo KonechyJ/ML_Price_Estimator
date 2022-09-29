@@ -1,0 +1,64 @@
+/* General styling */
+html{
+    height: 100%;
+}
+
+body{
+    background: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    min-height: 100%;
+}
+
+/* HOME.html */
+main{
+    display:flex; 
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.brand{
+    font-family: 'Montserrat', sans-serif;
+    color: #3b5998;
+}
+
+.card-img-top{
+    width: 100px;
+    height: 100px;
+}
+
+.card{
+    height: 300px;
+}
+
+.btn-cta1{
+    background: #3b5998;
+    color: #FFFFFF;
+}
+
+.btn-cta2{
+    background: #42b72a;
+    color: #FFFFFF;
+}
+
+.btn-cta1:hover{
+    background: #355089;
+    color: #FFFFFF;
+    
+}
+
+.btn-cta2:hover{
+    background: #3ba526;
+    color: #FFFFFF;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 768px) {
+    main{
+        display:flex; 
+        justify-content: center;
+        align-items:flex-start;
+        height:100vh;
+    }
+  }
