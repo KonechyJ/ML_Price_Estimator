@@ -1,0 +1,483 @@
+/* Default layout (desktop) */
+.html-default, .body-default{
+    height: 100%;
+}
+
+.body-default{
+    background: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.main-default{
+    display:flex; 
+    justify-content:center;
+    align-items:center;
+    min-height: 100%;
+}
+
+/* Brand link theme across pages */
+.brand-link{
+    font-family: 'Montserrat', sans-serif;
+    color: #3b5998; 
+}
+
+.brand-link:hover{
+    color:#2f4779;
+    text-decoration: underline;
+}
+
+/* Card theme across pages */
+.card-img-top{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+.card{
+    height: 300px;
+}
+
+.card-body{
+    padding: 10px;
+}
+
+/* Call to action button theme across pages */
+.btn-cta1{
+    background: #3b5998;
+}
+
+.btn-cta2{
+    background: #42b72a;
+    color: #FFFFFF;
+}
+
+.btn-cta1 .btn-link, .btn-cta2 .btn-link{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.btn-cta1:hover{
+    background: #2f4779;
+    border-color: #2f4779;
+    color: #FFFFFF;
+}
+
+.btn-cta2:hover{
+    background: #3ba526;
+    border-color: #3ba526;
+    color: #FFFFFF;
+}
+
+.btn-cta1:focus{
+    background: #3b5998;
+    border-color: #3b5998;
+    outline: none;
+}
+
+.btn-cta2:focus{
+    background: #42b72a;
+    border-color: #42b72a;
+    outline: none;
+}
+
+.btn-cta1 a.btn-link:hover{
+    color: #FFFFFF;
+}
+
+.btn-cta1 .btn-link:visited{
+    color: #FFFFFF;
+}
+
+/* login.html */
+.login-div form .item1, .login-div form .item2{
+    display: flex;
+    flex-direction: row;
+}
+
+.login-div form .item1 img, .login-div form .item2 img{
+    height: 38px;
+    margin: 0px 20px 0px 0px;
+}
+
+.login-div{
+    height: 100%;
+}
+
+.login-div form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100%;
+}
+
+.login-div form > div{
+    width: 75%;
+    padding: 5px;
+    margin: 0px auto;
+}
+
+.input-login, .input-login:focus{
+    color:#FFFFFF;
+}
+
+.forgot-password{
+    display: block;
+    text-align: center;
+    color: #3b5998;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.forgot-password:hover{
+    color: #2f4779;
+    text-decoration: underline;
+}
+
+.separator{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.separator .line{
+    border-top: 1px solid black;
+    width: 100%;
+    margin: 0px 10px;
+    opacity: 1;
+}
+
+/* register.html */
+.register-div form{
+    display: grid;
+    grid-template-areas:
+    'fname lname'
+    'email email'
+    'password password'
+    '. .'
+    '. .'
+    'dob dob';
+    gap: 15px;
+    padding: 25px;
+}
+
+.register-div form .item1{
+    grid-area: fname; 
+}
+
+.register-div form .item2{
+    grid-area: lname;
+}
+
+.register-div form .item3{
+    grid-area: email;
+}
+
+.register-div form .item4{
+    grid-area: password;
+}
+
+.register-div form .item5{
+    grid-area: dob;
+    text-align: center;
+}
+
+.register-div form .item5 input{
+    cursor: pointer;
+}
+
+.input-register:focus{
+    color: #FFFFFF;
+}
+
+.register-div form .item1, .register-div form .item2, .register-div form .item3, .register-div form .item4{
+    display: flex;
+    flex-direction: row;
+}
+
+.register-div form .item1 img, .register-div form .item2 img, .register-div form .item3 img, .register-div form .item4 img{
+    height: 38px;
+    margin: 0px 20px 0px 0px;
+}
+
+/* result.html */
+.result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    text-align: center;
+}
+
+.result h2{
+    color: #42b72a;
+}
+
+/* account.html */
+.account-settings-div form .item1, .account-settings-div form .item2, .account-settings-div form .item3, .account-settings-div form .item4{
+    display: flex;
+    flex-direction: row;
+}
+
+.account-settings-div form .item1 img, .account-settings-div form .item2 img, .account-settings-div form .item3 img, .account-settings-div form .item4 img{
+    height: 38px;
+    margin: 0px 20px 0px 0px;
+}
+
+.account-settings-div{
+    height: 100%;
+}
+
+.account-settings-div form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100%;
+}
+
+.account-settings-div form > div{
+    width: 75%;
+    padding: 5px;
+    margin: 0px auto;
+}
+
+/* upload.html */
+.upload-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+.upload-form .input-browse-file{
+    display: inline-block;
+    width: 90%;
+    margin: 0px auto;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: transparent;
+    width: 110px;
+}
+
+.upload-form label{
+    margin-top: 25px;
+}
+
+/* dashboard.html */
+.dashboard-grid{
+    display: grid;
+    grid-template-areas:
+    'nav . . .'
+    'nav . account .'
+    'nav . upload .'
+    'nav . results .';
+    min-width: 100%;
+}
+
+.dashboard-grid .item1{
+    grid-area: nav;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 100%;
+    background: #3b5998;
+    color: #FFFFFF;
+}
+
+.dashboard-grid .item1 .separator{
+    border-top: 5px solid #FFFFFF;
+    opacity: 0.7;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.dashboard-grid .item1 .side-nav ul{
+    list-style-type: none;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    margin: auto 20px;
+}
+
+.dashboard-grid .item1 .side-nav ul li{
+    font-size: 1.5rem;
+    padding: 20px 0px;
+}
+
+.dashboard-grid .item1 .side-nav ul li i{
+    margin-right: 5px;
+}
+
+.dashboard-grid .item1 .side-nav ul li a{
+    display: block;
+    height: 50px;
+    cursor: pointer;
+}
+
+.dashboard-grid .item1 .side-nav ul li a:hover{
+    color: #3ba526;
+}
+
+.dashboard-grid .item1 .side-nav .profile .user{
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.dashboard-grid .item1 .hamburger{
+    display: none;
+}
+
+.dashboard-grid .item1 .btn-log-out{
+    min-width: 50%;
+    display: block;
+    margin: 0px auto;
+    background: #42b72a;
+    border: 1px solid #FFFFFF;
+}
+
+.dashboard-grid .item1 .btn-log-out a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.dashboard-grid .item1 .btn-log-out:hover{
+    background: #3ba526;
+    text-decoration: none;
+}
+
+.dashboard-grid .item1 .brand-link{
+    font-size: 2rem;
+    color: #42b72a;
+}
+
+.dashboard-grid .item1 .brand-link:hover{
+    color: #3ba526;
+}
+
+.dashboard-grid .item2, .dashboard-grid .item3, .dashboard-grid .item4{
+    cursor: pointer;
+}
+
+.dashboard-grid .item2.dashboard.card, .dashboard-grid .item3.dashboard.card, .dashboard-grid .item4.dashboard.card{
+    min-width: 300px;
+    height: 300px;
+    margin: 0px auto;
+}
+
+.dashboard-grid .item2{
+    grid-area: account;
+    background-image: url('../assets/img/user-solid.svg');
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+    background-position: center;
+}
+
+.dashboard-grid .item3.dashboard.card{
+    grid-area: upload;
+    background-image: url('../assets/img/file-arrow-up-solid.svg');
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+    background-position: center;
+    
+}
+
+.dashboard-grid .item4.dashboard.card{
+    grid-area: results;
+    background-image: url('../assets/img/analyze.svg');
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+    background-position: center;
+}
+
+.dashboard-grid .item2.dashboard.card:hover, .dashboard-grid .item3.dashboard.card:hover, .dashboard-grid .item4.dashboard.card:hover{
+    border: 1px solid #3b5998;
+}
+
+.dashboard-grid .item2.dashboard.card .card-link, .dashboard-grid .item3.dashboard.card .card-link, .dashboard-grid .item4.dashboard.card .card-link {
+    height: 100%;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    color: #42b72a;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+/* MOBILE DASHBOARD CSS */
+@media screen and (max-width: 1000px) {
+
+    /* Hide these elements */
+    .dashboard-grid, .dashboard-grid .brand-header, .dashboard-grid .side-nav .profile, .dashboard-grid .item1 .log-out, .dashboard-grid .item1 .separator{
+        display: none;
+    }
+
+    /* Define grid layout */
+    .dashboard-grid{
+        display: grid;
+        grid-template-areas:
+        'nav'
+        '.'
+        'account'
+        'upload'
+        'results'
+        '.';
+        gap: 25px 0px;
+    }
+
+    /* Define nav */
+    .dashboard-grid .item1 .side-nav{
+        width: 100%;
+    }
+
+    .dashboard-grid .item1 .side-nav ul{
+        list-style-type: none;
+        font-size: 1.5rem;
+        padding: 0px 20px;
+    }
+
+    .dashboard-grid .item1 .side-nav.hide{
+        display: none;
+    }
+
+    .dashboard-grid .item1 .side-nav ul li{
+        padding: 20px 0px;
+    }
+
+    .dashboard-grid .item1 .side-nav ul li a:hover{
+        cursor: pointer;
+    }
+
+    .dashboard-grid .item1 .side-nav ul li{
+        font-size: 1.5rem;
+    }
+
+    .dashboard-grid .item1 .hamburger{
+        display: inline-block;
+        font-size: 2rem;
+        cursor: pointer;
+        margin: 5px 25px;
+        padding: 5px 0px;
+    }
+
+    /* Define cards */
+    .dashboard-grid .item2.dashboard.card, .dashboard-grid .item3.dashboard.card, .dashboard-grid .item4.dashboard.card{
+        width: 25%;
+    }
+
+    .dashboard-grid .item2, .dashboard-grid .item3, .dashboard-grid .item4{
+        height: 200px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .dashboard-html, .dashboard-body, .dashboard-main, .dashboard-grid{
+    height: 100%;
+    background: #f0f2f5;
+    }
+}
