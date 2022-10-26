@@ -13,6 +13,8 @@ bcrypt = Bcrypt(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
 #change the secret key later
 app.config["SECRET_KEY"] = "SECRETKEY123"
+#auto reload templates
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 #Allows falsk to load users
 login_manager = LoginManager()
@@ -44,7 +46,6 @@ class RegisterForm(FlaskForm):
         if existing_user_username:
             raise ValidationError(
                 'That username already exists. Please choose a different one.')
-
 
 #creates a registration from
 class LoginForm(FlaskForm):
@@ -95,8 +96,6 @@ def login():
                 login_user(user)
                 return redirect(url_for('dashboard'))
     return render_template('login.html', form=form)
-
-
 
 @ app.route('/register', methods=['GET', 'POST'])
 def register():

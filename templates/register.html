@@ -25,54 +25,32 @@
                 <!-- Brand Logo -->
                 <div class="text-center">
                     <h1><a class="brand-link" href="home">Price Estimator</a></h1>
-                    <h4><b>Sign Up!</b></h4>
-                    <p>It's quick and easy!</p>
+                    <h4>Create New Account</h4>
                 </div>
-                <!-- Form Grid -->
-                <div class="row">
+                <!-- Grid -->
+                <form id="login-register-form" method="POST" action="">
                     <div class="col-md-12 mb-3">
                         <div class="card">
-                            <div class="register-div">
-                                <!-- FORM -->
-
-                                    <div class="item1">
-                                        <img src="static/assets/user-solid.svg" alt="Card image">
-                                        <!-- Input First Name -->
-                                        <input type="text" class="form-control" id="fname" placeholder="First name">
-                                    </div>
-                                    <div class="item2">
-                                        <img src="static/assets/user-solid.svg" alt="Card image">
-                                        <!-- Input Last Name -->
-                                        <input type="text" class="form-control" id="lname" placeholder="Last name">
-                                    </div>
-
-                                     <div class="item3">
-                                        <label for="birthday">Birthday:</label>
-                                        <input type="date" id="birthday" name="birthday">
-                                    </div>
-                                    <form method="POST" action="">
-                                    {{ form.hidden_tag() }}
+                            <div class="login-register-div">
+                                {{ form.hidden_tag() }}
+                                <div class="item1 mt-4">
+                                    <img src="static/assets/user-solid.svg" alt="Card image">
                                     {{ form.username }}
+                                </div>
+                                <div class="item2">
+                                    <img src="static/assets/lock-solid.svg" alt="Card image">
                                     {{ form.password }}
-                                    {{ form.submit }}
-                                    </form>
-
-
-                                    <div class="item4">
-                                        <!-- User already has an account -->
-                                        <a class="forgot-password mt-3" href="{{url_for('login')}}">Already have an account?</a>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- CTA -->
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <!-- Input Submit -->
+                    <div class="col-md-12 text-center buttons">
+                        <!-- input id = submit -->
+                        <div id="submit-cta2">
+                            {{ form.submit }}
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </main>
         <!-- JavaScript -->

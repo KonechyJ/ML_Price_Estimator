@@ -26,27 +26,43 @@
                 <!-- Brand Logo -->
                 <div class="text-center">
                     <h1><a class="brand-link" href="home">Price Estimator</a></h1>
-                    <h4>Welcome back!</h4>
+                    <h4>Welcome Back!</h4>
                 </div>
-                    <img src="static/assets/user-solid.svg" alt="Card image">
-                    <img src="static/assets/lock-solid.svg" alt="Card image">
-                    <form method="POST" action="">
-                        {{ form.hidden_tag() }}
-                        {{ form.username }}
-                        {{ form.password }}
-                        {{ form.submit }}
-                    </form>
-                        <!-- Button create new account -->
-                        <button type="button" class="btn btn-cta2 btn-lg mb-3"><a class="btn-link" href="register">Create New Account</a></button>
-                        <p><a class="forgot-password" href="#">Forgot password?</a></p>
+                <!-- Grid -->
+                <form id="login-register-form" method="POST" action="">
+                    <div class="col-md-12 mb-3">
+                        <div class="card">
+                            <div class="login-register-div">
+                                {{ form.hidden_tag() }}
+                                <div class="item1 mt-4">
+                                    <img src="static/assets/user-solid.svg" alt="Card image">
+                                    {{ form.username }}
+                                </div>
+                                <div class="item2">
+                                    <img src="static/assets/lock-solid.svg" alt="Card image">
+                                    {{ form.password }}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <div class="col-md-12 text-center buttons">
+                        <!-- input id = submit -->
+                        {{ form.submit }}
+                        <div class="separator"> 
+                            <hr class="line">
+                            <p>or</p>
+                            <hr class="line">
+                        </div>
+                        <button type="button" class="btn btn-cta2 btn-lg mb-3"><a class="btn-link" href="register">Create New Account</a></button>
+                    </div>
+                </form>
+            </div> 
         </main>
         <!-- JavaScript -->
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
     </body>
 </html>
 
