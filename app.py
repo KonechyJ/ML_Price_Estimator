@@ -5,11 +5,14 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
-
+import os
+import string
 #app.debug = True
 app = Flask(__name__)
+#below creates the instance of the database
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+#connects to the database file
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
 #change the secret key later
 app.config["SECRET_KEY"] = "SECRETKEY123"
@@ -21,9 +24,33 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
+#folder path were new users folder will be created
+FODLER_PATH = r"users"
+
+
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+
+# creates a Login form
+class LoginForm(FlaskForm):
+    username = StringField(validators=[
+        InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
+    password = PasswordField(validators=[
+        InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
+    submit = SubmitField('Login')
+
+#gets the date and time the file was created
+def GetTime():
+    #hopefully gives access to the users current login name
+    form = LoginForm()
+    user = User.query.filter_by(username=form.username.data).first()
+
+    os.chdir(FODLER_PATH)
+    mod_time = os.stat(user).st_mtime
+    return (datetime.fromtimestamp(mod_time))
 
 #creates the table for our database
 class User(db.Model, UserMixin):
@@ -31,7 +58,17 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), nullable=False, unique=True)
     password = db.Column(db.String(80), nullable=False)
 
-#creates a registration from
+
+#Second table used to store user data files from training
+class Storage(db.Model, UserMixin):
+
+    usersname = db.Column(db.String(20), nullable=False, unique=True, primary_key=True)
+    date = db.Column(db.DateTime(), nullable = False)
+    path = db.Column(db.String(80), nullable=False)
+    size = db.Column(db.String(80),nullable=False)
+
+
+#creates a registration form
 class RegisterForm(FlaskForm):
     username = StringField(validators=[
                            InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
@@ -47,14 +84,42 @@ class RegisterForm(FlaskForm):
             raise ValidationError(
                 'That username already exists. Please choose a different one.')
 
-#creates a registration from
-class LoginForm(FlaskForm):
-    username = StringField(validators=[
-                           InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
-    password = PasswordField(validators=[
-                             InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
-    submit = SubmitField('Login')
 
+
+#=====================================================================================================================
+#creates a new folder based on the users name
+def createNewDir(FODLER_PATH):
+    #hopefully gives access to the users current login name
+    form = LoginForm()
+    user = User.query.filter_by(username=form.username.data).first()
+
+    os.chdir(FODLER_PATH)
+    os.mkdir(user)
+
+#List all the files in a dir and their path
+def listDir(FODLER_PATH):
+    os.chdir(FODLER_PATH)
+    print("File Name: " + fileName)
+    print("Folder Path: " + os.path.abspath(os.path.join(dir, fileName)), sep="\n")
+
+# returns the file path
+def GetFilePath(FODLER_PATH):
+    os.chdir(FODLER_PATH)
+    return(os.path.abspath(os.path.join(dir, fileName)))
+
+
+#naviagates to the user path and hopefully returns the file size of the files named after the user name
+def GetFileSize():
+    #hopefully gives access to the users current login name
+    form = LoginForm()
+    user = User.query.filter_by(username=form.username.data).first()
+
+    os.chdir(FODLER_PATH )
+    return(os.stat(user).st_size)
+
+
+
+#=====================================================================================================================
 
 #various routes to html files
 @app.route("/")
