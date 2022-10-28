@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -6,7 +8,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
 import os
-import string
+import time
 #app.debug = True
 app = Flask(__name__)
 #below creates the instance of the database
@@ -63,7 +65,7 @@ class User(db.Model, UserMixin):
 class Storage(db.Model, UserMixin):
 
     usersname = db.Column(db.String(20), nullable=False, unique=True, primary_key=True)
-    date = db.Column(db.DateTime(), nullable = False)
+    date = db.Column(db.DateTime(), nullable=False)
     path = db.Column(db.String(80), nullable=False)
     size = db.Column(db.String(80),nullable=False)
 
@@ -87,6 +89,12 @@ class RegisterForm(FlaskForm):
 
 
 #=====================================================================================================================
+#Food For Thought. Problems occurs when trying to give access to files based on Users that dont exist yet
+#Possible Solution, run the function to create the files from the entries in the column in the database, than comapre if the
+# user name is unique when creating a new one or checking for a specific version.from
+# Also create a check to stop from creating duplicate folder names.
+
+
 #creates a new folder based on the users name
 def createNewDir(FODLER_PATH):
     #hopefully gives access to the users current login name
