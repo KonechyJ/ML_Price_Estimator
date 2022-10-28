@@ -11,7 +11,7 @@
         <!-- CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <!-- Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,13 +19,13 @@
         <!-- Font awesome  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
+
     <body class="body-default">
         <main class="container main-default">
-
             <div>
                 <!-- Brand Logo -->
                 <div class="text-center">
-                    <h1><a class="brand-link" href="home1.html">Price Estimator</a></h1>
+                    <h1><a class="brand-link" href="home">Price Estimator</a></h1>
                     <h4>Welcome back!</h4>
                 </div>
                 <!-- Log In Form Grid -->
@@ -34,23 +34,21 @@
                         <div class="card">
                             <div class="login-div">
                                 <!-- FORM -->
-                                <form id="login-form" method="POST" action="">
                                     <div class="item1 mt-4">
-                                        <img src="assets/img/user-solid.svg" alt="Card image">
+                                        <img src="static/assets/user-solid.svg" alt="Card image">
                                         <!-- Input email -->
-                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" id="login-form" method="POST" action="" {{ form.username }} >
                                     </div>
                                     <div class="item2">
-                                        <img src="assets/img/lock-solid.svg" alt="Card image">
+                                        <img src="static/assets/lock-solid.svg" alt="Card image">
                                         <!-- Input password -->
-                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" id="login-form" method="POST" action="" {{ form.password }} >
                                     </div>
                                     <div class="item3">
                                         <!-- Forgot password link -->
                                         <!-- A page for this doesn't exist yet -->
                                         <p><a class="forgot-password" href="#">Forgot password?</a></p>
                                     </div>
-                                </form>
                         </div>
                     </div>
                 </div>
@@ -58,15 +56,16 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <!-- Input Submit -->
-                        <input class="btn btn-cta1 btn-lg mb-3 input-login" type="submit" from="login-form" value="Log In">
+                            <form method="POST" action="">{{ form.hidden_tag() }} {{ form.submit }}</form>
                         <div class="separator"> 
                             <hr class="line">
                             <p>or</p>
                             <hr class="line">
+
                         </div>
                         <!-- Button create new account -->
                         <a href="{{url_for('register')}}">
-                            <button type="button" class="btn btn-cta2 btn-lg mb-3"><a class="btn-link" href="register1.html">Create New Account</a></button>
+                            <button type="button" class="btn btn-cta2 btn-lg mb-3"><a class="btn-link" href="register">Create New Account</a></button>
                         </a>
                     </div>
                 </div>
