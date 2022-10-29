@@ -90,31 +90,49 @@
 }
 
 /* login.html */
-.login-div form .item1, .login-div form .item2{
+.login-register-div .item1, .login-register-div .item2{
     display: flex;
     flex-direction: row;
 }
 
-.login-div form .item1 img, .login-div form .item2 img{
+.login-register-div .item1 img, .login-register-div .item2 img{
     height: 38px;
     margin: 0px 20px 0px 0px;
 }
 
-.login-div{
+.login-register-div{
     height: 100%;
 }
 
-.login-div form{
+.login-register-div{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     min-height: 100%;
 }
 
-.login-div form > div{
+.login-register-div > div{
     width: 75%;
     padding: 5px;
     margin: 0px auto;
+}
+
+.login-register-div #username, .login-register-div #password{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .input-login, .input-login:focus{
@@ -147,57 +165,39 @@
     opacity: 1;
 }
 
-/* register.html */
-.register-div form{
-    display: grid;
-    grid-template-areas:
-    'fname lname'
-    'email email'
-    'password password'
-    '. .'
-    '. .'
-    'dob dob';
-    gap: 15px;
-    padding: 25px;
-}
-
-.register-div form .item1{
-    grid-area: fname; 
-}
-
-.register-div form .item2{
-    grid-area: lname;
-}
-
-.register-div form .item3{
-    grid-area: email;
-}
-
-.register-div form .item4{
-    grid-area: password;
-}
-
-.register-div form .item5{
-    grid-area: dob;
+/* The following code targets flask input variables with specified id */
+.buttons #submit
+{
+    background: #3b5998;
+    color:#FFFFFF;
+    margin-bottom: 1rem !important;
+    /* .btn */
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    display: inline-block;
+    text-decoration: none;
     text-align: center;
-}
-
-.register-div form .item5 input{
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    /* .btn lg */
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
 }
 
-.input-register:focus{
-    color: #FFFFFF;
-}
-
-.register-div form .item1, .register-div form .item2, .register-div form .item3, .register-div form .item4{
-    display: flex;
-    flex-direction: row;
-}
-
-.register-div form .item1 img, .register-div form .item2 img, .register-div form .item3 img, .register-div form .item4 img{
-    height: 38px;
-    margin: 0px 20px 0px 0px;
+#submit-cta2 #submit{
+    background: #42b72a;
 }
 
 /* result.html */
@@ -248,6 +248,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100%;
+    padding: 2rem;
 }
 
 .upload-form .input-browse-file{
@@ -258,6 +259,11 @@
     cursor: pointer;
     color: transparent;
     width: 110px;
+}
+
+.upload-form .x-var{
+    display: flex;
+    flex-direction: column;
 }
 
 .upload-form label{
@@ -367,9 +373,9 @@
     margin: 0px auto;
 }
 
-.dashboard-grid .item2{
+.dashboard-grid .item2.dashboard.card{
     grid-area: account;
-    background-image: url('../assets/img/user-solid.svg');
+    background-image: url('/static/assets/user-solid.svg');
     background-repeat: no-repeat;
     background-size: 60% 60%;
     background-position: center;
@@ -377,7 +383,7 @@
 
 .dashboard-grid .item3.dashboard.card{
     grid-area: upload;
-    background-image: url('../assets/img/file-arrow-up-solid.svg');
+    background-image: url('/static/assets/file-arrow-up-solid.svg');
     background-repeat: no-repeat;
     background-size: 60% 60%;
     background-position: center;
@@ -386,7 +392,7 @@
 
 .dashboard-grid .item4.dashboard.card{
     grid-area: results;
-    background-image: url('../assets/img/analyze.svg');
+    background-image: url('/static/assets/analyze.svg');
     background-repeat: no-repeat;
     background-size: 60% 60%;
     background-position: center;
