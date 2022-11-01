@@ -147,9 +147,13 @@ def about():
 def account():
     return render_template("account.html")
 
-@app.route("/upload")
-def upload():
-    return render_template("upload.html")
+@app.route("/train")
+def train():
+    return render_template("train.html")
+
+@app.route("/test")
+def test():
+    return render_template("Test.html")
 
 @app.route("/results")
 def results():
