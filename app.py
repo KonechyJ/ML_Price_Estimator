@@ -30,7 +30,7 @@ login_manager.login_view = 'login'
 FODLER_PATH = r"users"
 
 #file path to house the directory for the .csv files
-FilePath = ""
+FilePath = "dataSets/car data.csv"
 
 
 
@@ -162,8 +162,6 @@ def train():
         xInput = request.form["x7"]
 
         yInput = request.form["y1"]
-        print(xInput)
-        print(yInput)
     else:
         return render_template("train.html")
 
@@ -179,11 +177,9 @@ def test():
         xInput2 = request.form["x2-7"]
 
         yInput2 = request.form["y2-1"]
-        print(xInput2)
-        print(yInput2)
+
     else:
         return render_template("Test.html")
-
 
 @app.route("/results")
 def results():
