@@ -1,5 +1,5 @@
 from datetime import datetime
-from Model1API import *
+from ModelAPI import *
 from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -32,7 +32,8 @@ FODLER_PATH = r"users"
 #file path to house the directory for the .csv files
 FilePath = "dataSets/car data.csv"
 
-
+# model
+Linear_Model = None
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -135,6 +136,7 @@ def GetFileSize():
 #various routes to html files
 @app.route("/")
 def index():
+    print("home")
     return render_template("home1.html")
 
 @app.route("/dashboard")
@@ -153,31 +155,20 @@ def account():
 @app.route("/train", methods=["POST","GET"])
 def train():
     if request.method == "POST":
-        xInput = request.form["x1"]
-        xInput = request.form["x2"]
-        xInput = request.form["x3"]
-        xInput = request.form["x4"]
-        xInput = request.form["x5"]
-        xInput = request.form["x6"]
-        xInput = request.form["x7"]
-
+        xInputs = [request.form["x1"], request.form["x2"], request.form["x3"], request.form["x4"], request.form["x5"], request.form["x6"], request.form["x7"]]
         yInput = request.form["y1"]
+        Linear_Model = ModelAPI("car_web_dataset.csv", xInputs, yInput) 
+        Linear_Model.train()
+        Linear_Model.performance()
     else:
         return render_template("train.html")
 
 @app.route("/test")
 def test():
     if request.method == "POST":
-        xInput2 = request.form["x2-1"]
-        xInput2 = request.form["x2-2"]
-        xInput2 = request.form["x2-3"]
-        xInput2 = request.form["x2-4"]
-        xInput2 = request.form["x2-5"]
-        xInput2 = request.form["x2-6"]
-        xInput2 = request.form["x2-7"]
-
-        yInput2 = request.form["y2-1"]
-
+        xInputs2 = [requst.form["x2-1"], request.form["x2-2"], request.form["x2-3"], request.form["x2-4"], request.form["x2-5"], request.form["x2-6"], request.form["x2-7"]]
+        # yInput2 = request.form["y2-1"]
+        Linear_Model.predict(xInputs2, yInput2)
     else:
         return render_template("Test.html")
 

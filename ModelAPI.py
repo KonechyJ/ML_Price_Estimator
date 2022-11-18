@@ -31,10 +31,11 @@ class ModelAPI:
 
     def performance(self):
         self.predict(self.X_test)
-        print('MAE:', metrics.mean_absolute_error(self.y_test, self.LM_pred))
-        print('MSE:', metrics.mean_squared_error(self.y_test, self.LM_pred))
-        print('RMSE:', np.sqrt(metrics.mean_squared_error(self.y_test, self.LM_pred)))
-
+        MAE = metrics.mean_absolute_error(self.y_test, self.LM_pred)
+        MSE = metrics.mean_squared_error(self.y_test, self.LM_pred)
+        RMSE = np.sqrt(metrics.mean_squared_error(self.y_test, self.LM_pred))
+        print({"MAE": MAE, "MSE": MSE, "RMSE": RMSE})
+        return {"MAE": MAE, "MSE": MSE, "RMSE": RMSE}
 
 if __name__ == "__main__":
     # for testing
