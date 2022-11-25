@@ -25,38 +25,49 @@
             <div>
                 <!-- Brand Logo -->
                 <div class="text-center">
-                    <h1><a class="brand-link" href="home">Price Estimator</a></h1>
-                    <h4>Welcome Back!</h4>
+                    <h1><a class="brand-link" href="#">Price Estimator</a></h1>
+                    <h4>How does it work?</h4>
                 </div>
-                <!-- Grid -->
-                <form id="login-register-form" method="POST" action="">
-                    <div class="col-md-12 mb-3">
+                <!-- 1 x 3 Card Layout -->
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <!-- Card 1 -->
                         <div class="card">
-                            <div class="login-register-div">
-                                {{ form.hidden_tag() }}
-                                <div class="item1 mt-4">
-                                    <img src="static/assets/user-solid.svg" alt="Card image">
-                                    {{ form.username }}
-                                </div>
-                                <div class="item2">
-                                    <img src="static/assets/lock-solid.svg" alt="Card image">
-                                    {{ form.password }}
-                                </div>
+                            <img class="card-img-top" src="static/assets/user-solid.svg" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title"><b>Account</b></h4>
+                                <p class="card-text">The account button on your dashboard is where you go to change your name, email, or password. </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 text-center buttons">
-                        <!-- input id = submit -->
-                        {{ form.submit }}
-                        <div class="separator"> 
-                            <hr class="line">
-                            <p>or</p>
-                            <hr class="line">
-                        </div>
-                        <button type="button" class="btn btn-cta2 btn-lg mb-3"><a class="btn-link" href="register">Create New Account</a></button>
+                    <div class="col-md-4 mb-3">
+                        <!-- Card 2 -->
+                        <div class="card">
+                            <img class="card-img-top" src="static/assets/upload.svg" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title"><b>Upload</b></h4>
+                                <p class="card-text">The upload button on your dashboard is where you go to upload your dataset to our application.</p>
+                            </div>
+                            </div>
                     </div>
-                </form>
-            </div> 
+                    <div class="col-md-4 mb-3">
+                        <!-- Card 3 -->
+                        <div class="card">
+                            <img class="card-img-top" src="static/assets/analyze.svg" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title"><b>Results</b></h4>
+                                <p class="card-text">The results button on your dashboard is where you go to view the price estimation of your data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CTA -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn btn-cta2 btn-lg mb-3"><a class="btn-link" href="dashboard">Return to Dashboard</a></button>
+                    </div>
+                </div>
+            </div>
         </main>
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
@@ -64,10 +75,3 @@
         <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
     </body>
 </html>
-
-
-
-
-
-
-

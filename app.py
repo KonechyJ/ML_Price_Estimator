@@ -142,9 +142,21 @@ def index():
 def dashboard():
     return render_template("dashboard1.html")
 
+@app.route("/dashboard2")
+def dashboard2():
+    return render_template("dashboard2.html")
+
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about1.html")
+
+@app.route("/help")
+def help():
+    return render_template("help.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 @app.route("/account")
 def account():

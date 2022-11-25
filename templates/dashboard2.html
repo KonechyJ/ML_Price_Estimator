@@ -18,14 +18,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto&display=swap" rel="stylesheet"> 
         <!-- Font awesome  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Plotly -->
+        <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
     </head>
     <!-- Body -->
     <body id="dashboard-body" class="dashboard-body">
         <!-- Main -->
         <main id="dashboard-main" class="dashboard-main">
             <!-- Dashboard grid -->
-            <div id="dashboard-grid" class="dashboard-grid">
-                <!-- Side Nav Container -->
+            <div id="dashboard-grid" class="dashboard-grid-alt">
+                <!--Side nav container -->
                 <div id="item1" class="item1">
                     <!-- Brand Logo -->
                     <div class="brand-header text-center">
@@ -38,11 +40,11 @@
                     </div>
                     <!-- Side Nav -->
                     <nav class="side-nav">
-                        <!-- Profile Display -->
+                        <!-- User Profile -->
                         <div class="profile">
                             <p class="user">user@example.com</p>
                         </div>
-                        <!-- Nav Links -->
+                        <!-- Side Nav Links -->
                         <div class="separator"></div>
                         <ul>
                             <li><a class="side-nav-a" href="help"><i class="fa-solid fa-circle-question"></i> Help</a></li>
@@ -58,11 +60,17 @@
                         </a>
                     </div>
                 </div>
-                <!-- Card Links -->
+                <!-- item2, item3, and item4 = Account, Upload, and Results navigation. -->
                 <div class="item2 dashboard card"><a class="card-link" href="account">Account</a></div>
-                <div class="item3 dashboard card"><a class="card-link" href="train">Train</a></div>
-                <div class="item1 dashboard card"><a class="card-link" href="test">Test</a></div>
+                <div class="item3 dashboard card"><a class="card-link" href="upload">Upload</a></div>
                 <div class="item4 dashboard card"><a class="card-link" href="results">Results</a></div>
+                <!-- Reserved space for a graph -->
+                <div id="graph" class="item5 dashboard card">
+                    <!-- TARGET THIS ID TO DISPLAY A GRAPH USING SOMETHING LIKE PLOTLY OR PYPLOT -->
+                    <!-- BE SURE TO ADJUST THE GRAPH'S PROPERTIES BY READING DOCS SO THAT IT LOOKS DECENT -->
+                    <!-- E.G., make graph responsive, increase font size if needed, etc. -->
+                    <!-- Let me know if there are any issues. -->
+                </div>
             </div>
         </main>
         <!-- Scripts -->

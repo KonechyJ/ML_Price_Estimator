@@ -15,7 +15,7 @@
         <!-- Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto&display=swap" rel="stylesheet"> 
         <!-- Font awesome  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
@@ -24,33 +24,33 @@
             <div>
                 <!-- Brand Logo -->
                 <div class="text-center">
-                    <h1><a class="brand-link" href="home">Price Estimator</a></h1>
-                    <h4>Create New Account</h4>
+                    <h1><a class="brand-link" href="#">Price Estimator</a></h1>
+                    <h4>Contact Us</h4>
                 </div>
-                <!-- Grid -->
-                <form id="login-register-form" method="POST" action="">
+                <!-- 1 x 3 Card Layout -->
+                <div class="row">
                     <div class="col-md-12 mb-3">
-                        <div class="card">
-                            <div class="login-register-div">
-                                {{ form.hidden_tag() }}
-                                <div class="item1 mt-4">
-                                    <img src="static/assets/user-solid.svg" alt="Card image">
-                                    {{ form.username }}
-                                </div>
-                                <div class="item2">
-                                    <img src="static/assets/lock-solid.svg" alt="Card image">
-                                    {{ form.password }}
-                                </div>
+                        <!-- Card 1 -->
+                        <div class="card contact">
+                            <img class="card-img-top" src="static/assets/envelope-solid.svg" alt="Card image">
+                            <div class="card-body">
+                                <h4><b>Send Us an Email</b></h4>
+                                <p>For help with your account or any other issues relating to our service, please 
+                                    do not hesitate to contact us using the "send email" button below.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 text-center buttons">
-                        <!-- input id = submit -->
-                        <div id="submit-cta2">
-                            {{ form.submit }}
-                        </div>
+                </div>
+                <!-- CTA -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <!-- The href on this button will open the client's email app. -->
+                        <!-- Change the mailto address to an existing email to complete functionality -->
+                        <!-- Example being href="mailto:support@priceestimator.com" -->
+                        <button type="button" class="btn btn-cta1 btn-lg mb-3"><a class="btn-link" href="mailto:support@priceestimator.com">Send Email</a></button>
+                        <button type="button" class="btn btn-cta2 btn-lg mb-3"><a class="btn-link" href="dashboard">Return to Dashboard</a></button>
                     </div>
-                </form>
+                </div>
             </div>
         </main>
         <!-- Scripts -->
