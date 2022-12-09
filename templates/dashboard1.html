@@ -19,15 +19,17 @@
         <!-- Font awesome  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
+    <!-- Body -->
     <body id="dashboard-body" class="dashboard-body">
+        <!-- Main -->
         <main id="dashboard-main" class="dashboard-main">
-            <!-- CSS Grid -->
+            <!-- Dashboard grid -->
             <div id="dashboard-grid" class="dashboard-grid">
-                <!-- Nav Container -->
+                <!-- Side Nav Container -->
                 <div id="item1" class="item1">
                     <!-- Brand Logo -->
                     <div class="brand-header text-center">
-                        <h1><a class="brand-link" href="home">Price Estimator</a></h1>
+                        <h1><a class="brand-link" href="#">Price Estimator</a></h1>
                         <h4><b>My Dashboard</b></h4>
                     </div>
                     <!-- Hamburger Icon -->
@@ -43,9 +45,9 @@
                         <!-- Nav Links -->
                         <div class="separator"></div>
                         <ul>
-                            <li><a><i class="fa-solid fa-circle-question"></i> Help</a></li>
-                            <li><a><i class="fa-solid fa-circle-info"></i> About</a></li>
-                            <li><a><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                            <li><a class="side-nav-a" href="help"><i class="fa-solid fa-circle-question"></i> Help</a></li>
+                            <li><a class="side-nav-a" href="about"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                            <li><a class="side-nav-a" href="contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
                         </ul>
                         <div class="separator"></div>
                     </nav>
@@ -58,12 +60,12 @@
                 </div>
                 <!-- Card Links -->
                 <div class="item2 dashboard card"><a class="card-link" href="account">Account</a></div>
-                <div class="item3 dashboard card"><a class="card-link" href="upload">Upload</a></div>
+                <div class="item3 dashboard card"><a class="card-link" href="train">Train</a></div>
+                <div class="item1 dashboard card"><a class="card-link" href="test">Test</a></div>
                 <div class="item4 dashboard card"><a class="card-link" href="results">Results</a></div>
             </div>
         </main>
-        <!-- JavaScript -->
-        <!-- JavaScript Bundle with Popper -->
+        <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
         <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>

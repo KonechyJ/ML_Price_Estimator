@@ -1,6 +1,6 @@
 from datetime import datetime
-
-from flask import Flask, render_template, url_for, redirect
+from Model1API import *
+from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
@@ -28,6 +28,9 @@ login_manager.login_view = 'login'
 
 #folder path were new users folder will be created
 FODLER_PATH = r"users"
+
+#file path to house the directory for the .csv files
+FilePath = "dataSets/car data.csv"
 
 
 
@@ -139,21 +142,64 @@ def index():
 def dashboard():
     return render_template("dashboard1.html")
 
+@app.route("/dashboard2")
+def dashboard2():
+    return render_template("dashboard2.html")
+
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about1.html")
+
+@app.route("/help")
+def help():
+    return render_template("help.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 @app.route("/account")
 def account():
     return render_template("account.html")
 
-@app.route("/upload")
-def upload():
-    return render_template("upload.html")
+@app.route("/train", methods=["POST","GET"])
+def train():
+    if request.method == "POST":
+        xInput = request.form["x1"]
+        xInput = request.form["x2"]
+        xInput = request.form["x3"]
+        xInput = request.form["x4"]
+        xInput = request.form["x5"]
+        xInput = request.form["x6"]
+        xInput = request.form["x7"]
+
+        yInput = request.form["y1"]
+    else:
+        return render_template("train.html")
+
+@app.route("/test")
+def test():
+    if request.method == "POST":
+        xInput2 = request.form["x2-1"]
+        xInput2 = request.form["x2-2"]
+        xInput2 = request.form["x2-3"]
+        xInput2 = request.form["x2-4"]
+        xInput2 = request.form["x2-5"]
+        xInput2 = request.form["x2-6"]
+        xInput2 = request.form["x2-7"]
+
+        yInput2 = request.form["y2-1"]
+
+    else:
+        return render_template("Test.html")
 
 @app.route("/results")
 def results():
     return render_template("results.html")
+
+@app.route("/results2")
+def results2():
+    return render_template("results2.html")
 
 @app.route("/home")
 def home():
