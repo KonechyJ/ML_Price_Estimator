@@ -184,10 +184,6 @@ def test():
     else:
         return render_template("Test.html")
 
-@app.route("/results")
-def results():
-    return render_template("results.html")
-
 @app.route("/results2")
 def results2():
     return render_template("results2.html")
