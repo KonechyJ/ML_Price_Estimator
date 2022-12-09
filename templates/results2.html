@@ -23,23 +23,28 @@
         <main class="container main-default">
             <div>
                 <!-- Brand Logo -->
-                <div class="text-center">
+                <!-- <div class="text-center">
                     <h1><a class="brand-link" href="#">Price Estimator</a></h1>
                     <h4><b>Upload a <i class="fa-solid fa-file-csv"></i> file</b></h4>
+                </div> -->
+                <!-- Brand Logo -->
+                <div class="text-center">
+                    <h1><a class="brand-link" href="#">Price Estimator</a></h1>
+                    <h4><b>Results</b></h4>
+                    <p>We'll soon show the price estimate here.</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <div class="card" style="height: 100%;">
+                            <!-- Price estimate -->
+                            <div class="results-label">
+                                <h2 id="price-estimate-result" class="display-2 text-center"><i class="fa-solid fa-dollar-sign"></i> XXXX.XX</h2>
+                            </div>
                             <!-- FORM -->
-                            <form action="#" method="post "id="upload-file-form" class="upload-form">
-                                <div class="browse-file-div mb-3">
-                                    <!-- Select File Input -->
-                                    <label for="myfile">Choose file to upload:</label>
-                                    <input class="input-browse-file" type="file" id="myfile" name="myfile">
-                                </div>
+                            <form action="#" method="post "id="upload-file-form" class="results-form">
                                 <!-- Input variables -->
                                 <div class="x-var mb-3">
-                                    <p style="margin:0px;">What are the independent variables?</p>
+                                    <p style="margin:0px;">What are the <b>values</b> for the independent variables?</p>
                                     <label for="x1">X1:</label>
                                     <input type="text" id="x1" name="x1">
                                     <label for="x2">X2:</label>
@@ -55,24 +60,39 @@
                                     <label for="x7">X7:</label>
                                     <input type="text" id="x7" name="x7">
                                 </div>
-                                <div class="y-var mb-3">
-                                    <p style="margin:0px;">What is the dependent variable?</p>
-                                    <label for="y1">Y:</label>
-                                    <input type="text" id="y1" name="y1">
-                                </div>
                                 <!-- Input Submit -->
-                                <input class="btn btn-cta2 btn-lg mb-3" type="submit" from="upload-file-form" value="Upload File">
+                                <input class="btn btn-cta2 btn-lg mb-3" type="submit" from="upload-file-form" value="Submit Data">
                             </form>
                         </div>
                     </div>
                 </div>
                     <div class="row">
                         <div class="col-md-12 text-center form">
-                            <button type="button" class="btn btn-cta1 btn-lg mb-3"><a class="btn-link" href="dashboard">Go Back</a></button>
-                            <button type="button" class="btn btn-cta1 btn-lg mb-3"><a class="btn-link" href="test">Test Data</a></button>
+                            <button type="button" class="btn btn-cta1 btn-lg mb-3"><a class="btn-link" href="dashboard">Return to Dashboard</a></button>
                         </div>
                     </div>
             </div>
+            <!-- <div>
+                <div class="text-center">
+                    <h1><a class="brand-link" href="#">Price Estimator</a></h1>
+                    <h4><b>Results 2</b></h4>
+                    <p>Based off the provided dataset, here is our price estimation.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="card">
+                            <div class="result">
+                                <h2 id="price-estimate-result" class="display-2"><i class="fa-solid fa-dollar-sign"></i> XXXX.XX</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center form">
+                        <button type="button" class="btn btn-cta1 btn-lg mb-3"><a class="btn-link" href="dashboard2">Return to Dashboard</a></button>
+                    </div>
+                </div>
+            </div> -->
         </main>
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

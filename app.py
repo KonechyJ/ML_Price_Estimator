@@ -197,6 +197,10 @@ def test():
 def results():
     return render_template("results.html")
 
+@app.route("/results2")
+def results2():
+    return render_template("results2.html")
+
 @app.route("/home")
 def home():
     return render_template("home1.html")
