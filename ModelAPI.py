@@ -23,6 +23,7 @@ class ModelAPI:
 
     def predict(self, data):
         self.LM_pred = self.LM.predict(data)
+        print(self.LM_pred)
         return self.LM_pred
 
     def train(self):
@@ -35,13 +36,15 @@ class ModelAPI:
         MSE = metrics.mean_squared_error(self.y_test, self.LM_pred)
         RMSE = np.sqrt(metrics.mean_squared_error(self.y_test, self.LM_pred))
         print({"MAE": MAE, "MSE": MSE, "RMSE": RMSE})
-        return {"MAE": MAE, "MSE": MSE, "RMSE": RMSE}
+        return f"MAE: {MAE}\nMSE: {MSE}\nRMSE: {RMSE}"
 
 if __name__ == "__main__":
     # for testing
-    Linear_Model = ModelAPI("car_web_dataset.csv", ["Year", "Present_Price", "Kms_Driven", "Fuel_Type_Diesel", "Fuel_Type_Petrol", "Seller_Type_Individual", "Transmission_Manual"], "Selling_Price")
+    # Present_Price	Kms_Driven	Owner	no_year	Fuel_Type_Diesel	Fuel_Type_Petrol	Seller_Type_Individual	Transmission_Manual
+    Linear_Model = ModelAPI("dataSets/car_web_dataset.csv", ["Present_Price","Kms_Driven","Owner","no_year","Fuel_Type_Diesel","Fuel_Type_Petrol","Seller_Type_Individual","Transmission_Manual"], "Selling_Price")
     Linear_Model.train()
     Linear_Model.performance()
+    Linear_Model.predict([[5.59,27000,0,8,0,1,0,1]])
 
 
 

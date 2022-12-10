@@ -38,10 +38,15 @@
                         <div class="card" style="height: 100%;">
                             <!-- Price estimate -->
                             <div class="results-label">
-                                <h2 id="price-estimate-result" class="display-2 text-center"><i class="fa-solid fa-dollar-sign"></i> XXXX.XX</h2>
+                                {% if data is defined %}
+                                    <h2 id="price-estimate-result" class="display-2 text-center"><i class="fa-solid fa-dollar-sign"></i>{{ data }}</h2>
+                                {% else %}
+                                    <h2 id="price-estimate-result" class="display-2 text-center"><i class="fa-solid fa-dollar-sign"></i> XXXX.XX</h2>
+                                {% endif %}
+                                
                             </div>
                             <!-- FORM -->
-                            <form action="#" method="post "id="upload-file-form" class="results-form">
+                            <form action="#" method="POST" id="upload-file-form" class="results-form">
                                 <!-- Input variables -->
                                 <div class="x-var mb-3">
                                     <p style="margin:0px;">What are the <b>values</b> for the independent variables?</p>
@@ -59,6 +64,8 @@
                                     <input type="text" id="x6" name="x6">
                                     <label for="x7">X7:</label>
                                     <input type="text" id="x7" name="x7">
+                                    <label for="x8">X8:</label>
+                                    <input type="text" id="x8" name="x8">
                                 </div>
                                 <!-- Input Submit -->
                                 <input class="btn btn-cta2 btn-lg mb-3" type="submit" from="upload-file-form" value="Submit Data">
@@ -68,7 +75,7 @@
                 </div>
                     <div class="row">
                         <div class="col-md-12 text-center form">
-                            <button type="button" class="btn btn-cta1 btn-lg mb-3"><a class="btn-link" href="dashboard">Return to Dashboard</a></button>
+                            <button type="button" class="btn btn-cta1 btn-lg mb-3"><a class="btn-link" href="dashboard2">Return to Dashboard</a></button>
                         </div>
                     </div>
             </div>
