@@ -1,5 +1,5 @@
 from datetime import datetime
-from Model1API import *
+from ModelAPI import *
 from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -32,7 +32,8 @@ FODLER_PATH = r"users"
 #file path to house the directory for the .csv files
 FilePath = "dataSets/car data.csv"
 
-
+# model
+Linear_Model = None
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -135,6 +136,7 @@ def GetFileSize():
 #various routes to html files
 @app.route("/")
 def index():
+    print("home")
     return render_template("home1.html")
 
 @app.route("/dashboard")
@@ -165,41 +167,34 @@ def account():
 @app.route("/train", methods=["POST","GET"])
 def train():
     if request.method == "POST":
-        xInput = request.form["x1"]
-        xInput = request.form["x2"]
-        xInput = request.form["x3"]
-        xInput = request.form["x4"]
-        xInput = request.form["x5"]
-        xInput = request.form["x6"]
-        xInput = request.form["x7"]
-
+        xInputs = [request.form["x1"], request.form["x2"], request.form["x3"], request.form["x4"], request.form["x5"], request.form["x6"], request.form["x7"], request.form["x8"]]
         yInput = request.form["y1"]
+        global Linear_Model
+        Linear_Model = ModelAPI("dataSets/car_web_dataset.csv", xInputs, yInput) 
+        Linear_Model.train()
+        return render_template("train.html")
     else:
         return render_template("train.html")
 
 @app.route("/test")
 def test():
-    if request.method == "POST":
-        xInput2 = request.form["x2-1"]
-        xInput2 = request.form["x2-2"]
-        xInput2 = request.form["x2-3"]
-        xInput2 = request.form["x2-4"]
-        xInput2 = request.form["x2-5"]
-        xInput2 = request.form["x2-6"]
-        xInput2 = request.form["x2-7"]
+    # if request.method == "POST":
+    #     xInputs2 = [requst.form["x2-1"], request.form["x2-2"], request.form["x2-3"], request.form["x2-4"], request.form["x2-5"], request.form["x2-6"], request.form["x2-7"]]
+    #     Linear_Model.predict(xInputs2, yInput2)
+    # else:
+    #     return render_template("Test.html")
+    performance = Linear_Model.performance()
+    return render_template("test.html", data = performance)
 
-        yInput2 = request.form["y2-1"]
-
-    else:
-        return render_template("Test.html")
-
-@app.route("/results")
-def results():
-    return render_template("results.html")
-
-@app.route("/results2")
+@app.route("/results2", methods=["POST","GET"])
 def results2():
-    return render_template("results2.html")
+    if request.method == "POST":
+        xInputs = [float(request.form["x1"]), int(request.form["x2"]), int(request.form["x3"]), int(request.form["x4"]), int(request.form["x5"]), int(request.form["x6"]), int(request.form["x7"]), int(request.form["x8"])]
+        predict = Linear_Model.predict([xInputs])
+        predict = str(round(predict[0]*1000, 2))
+        return render_template("results2.html", data = predict)
+    else:
+        return render_template("results2.html")
 
 @app.route("/home")
 def home():
