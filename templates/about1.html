@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="html-default">
+    <head>
+        <!-- Metadata -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Title -->
+        <title>Price Estimator</title>
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <!-- Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto&display=swap" rel="stylesheet"> 
+        <!-- Font awesome  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body class="body-default">
+        <main class="container main-default">
+            <div>
+                <!-- Brand Logo -->
+                <div class="text-center">
+                    <h1><a class="brand-link" href="#">Price Estimator</a></h1>
+                    <h4>Meet the Developers</h4>
+                </div>
+                <!-- 1 x 3 Card Layout -->
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <!-- Card 1 -->
+                        <div class="card-about">
+                            <img class="card-img-top-about" src="static/assets/joshua.jpg" alt="Card image">
+                            <div class="card-body-about">
+                                <h4 class="card-title"><b>Joshua Konechy</b></h4>
+                                <!-- Your bio here -->
+                                <p class="card-text"> A 2022 Grad from CSUF, Josh took on the backend in this project.
+                                    This included creating a database and all the middleware needed to house the machine
+                                    learning and frontend CSS. Josh hopes to leverage his people skills and leader like
+                                    qualities to some day take on a management type position.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <!-- Card 2 -->
+                        <div class="card-about">
+                            <img class="card-img-top-about" src="static/assets/arifulla.jpg" alt="Card image">
+                            <div class="card-body-about">
+                                <h4 class="card-title"><b>Arifulla Shaik</b></h4>
+                                <!-- Your bio here -->
+                                <p class="card-text">Experienced with machine learning algorithms, Afrifulla is the 
+                                    developer responsible for making price estimations possible. Graduating from 
+                                    California State University Fullerton in 2022, Arifulla looks forward to a 
+                                    bright future with artificial intelligence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <!-- Card 3 -->
+                        <div class="card-about">
+                            <img class="card-img-top-about" src="static/assets/brent.jpg" alt="Card image">
+                            <div class="card-body-about">
+                                <h4><b>Brent Pfefferle</b></h4>
+                                <!-- Your bio here -->
+                                <p>Computer science graduate from California State University Fullerton, enjoys 
+                                    front-end web development and aspires to be a full-stack developer. Lead 
+                                    UI/UX developer for Price Estimator. Besides being a code monkey, likes 
+                                    to travel and see the world.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CTA -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn btn-cta2 btn-lg mb-3"><a class="btn-link" href="dashboard">Return to Dashboard</a></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    </body>
+</html>
