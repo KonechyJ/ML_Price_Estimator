@@ -7,6 +7,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
+from flaskwebgui import FlaskUI
 import os
 import time
 #app.debug = True
@@ -233,4 +234,6 @@ def logout():
 
 if __name__ == "__main__":
     app.static_folder = 'static'
-    app.run()
+    #app.run()
+    FlaskUI(app=app, server='flask').run()
+
